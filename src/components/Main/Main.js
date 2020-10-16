@@ -11,11 +11,11 @@ const video = {
 const Main = ({ rocket }) => {
   return (
     <section className="main">
-      <h1 className="title">{rocket}</h1>
+      <h1 className="title">{rocket ? rocket : 'Calendar of SpaceX'}</h1>
 
-      <div className="video-container">
+      {rocket && <div className="video-container">
         <video className="video" autoPlay loop muted src={`./video/${video.hasOwnProperty(rocket) ? video[rocket] : video.other}.mp4`} />
-      </div>
+      </div>}
     </section>
   );
 };
